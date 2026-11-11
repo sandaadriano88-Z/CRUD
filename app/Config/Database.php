@@ -4,8 +4,8 @@
 class Database{
 
     private $hostname = "db";
-    private $username = "appuser";
-    private $password = "apppassword";
+    private $username = "cn_user";
+    private $password = "cnpassword";
     private $dbname = "cn";
 
     public $con;
