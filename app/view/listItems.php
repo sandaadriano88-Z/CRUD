@@ -186,6 +186,11 @@ require_once __DIR__."/../Controller/fetchAll.php";
             cursor: not-allowed;
             pointer-events: none;
          }
+         @media screen and (min-width: 740px) and (max-width: 1024px) {
+            main{
+                width: 80%;
+            }
+         }
 
          @media screen and (max-width: 740px) {
             
@@ -201,9 +206,7 @@ require_once __DIR__."/../Controller/fetchAll.php";
             }
 
             main{
-                overflow: hidden;
-                overflow-x: scroll;
-                scrollbar-width: none;
+                
                 width: 100%;
                 
             }
@@ -218,7 +221,14 @@ require_once __DIR__."/../Controller/fetchAll.php";
                 display: none;
             }
             table{
+                
                 width: 100%;
+            }
+            #whole{
+                width: 100%;
+                overflow: hidden;
+                overflow-x: scroll;
+                scrollbar-width: none;
             }
             
          }
@@ -250,7 +260,7 @@ require_once __DIR__."/../Controller/fetchAll.php";
         <div>
             <a href="?move=register" id="linkadd"><i class="bi bi-plus"></i>Add Student</a>
         </div>
-        <div>
+        <div id="whole">
             <table border="3">
                 <thead>
                     <tr>
