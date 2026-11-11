@@ -48,7 +48,7 @@ require_once __DIR__."/../Controller/fetchAll.php";
             flex-direction: column;
             gap: 3vh;
             margin-top: 18vh;
-            /* width: 60%; */
+            width: 80%;
             background-color: white;
             padding: 2vh;
             border-radius: 10px;
