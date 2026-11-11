@@ -14,11 +14,11 @@ services:
       - .:/var/www/html
 
     environment:
-      DB_HOST: db
-      DB_PORT: 3306
+      DB_HOST: cn-hex-mold.sage.cloud.layerbase.dev
+      DB_PORT: 47183
       DB_NAME: cn
-      DB_USER: cn_user
-      DB_PASSWORD: cnpassword
+      DB_USER: root
+      DB_PASSWORD: TDXMm2sVOQm9oJWcyv1TFVgm
 
     depends_on:
       db:

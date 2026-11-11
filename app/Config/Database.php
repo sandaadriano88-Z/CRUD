@@ -3,9 +3,9 @@
 
 class Database{
 
-    private $hostname = "db";
-    private $username = "cn_user";
-    private $password = "cnpassword";
+    private $hostname = "cn-hex-mold.sage.cloud.layerbase.dev";
+    private $username = "root";
+    private $password = "TDXMm2sVOQm9oJWcyv1TFVgm";
     private $dbname = "cn";
 
     public $con;
