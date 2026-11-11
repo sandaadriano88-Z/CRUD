@@ -1,0 +1,65 @@
+services:
+
+  # PHP + Apache web application
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: php_web
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - .:/var/www/html
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    restart: unless-stopped
+
+  # MariaDB database
+  db:
+    image: mariadb:11.4
+
+    container_name: mariadb_db
+
+    restart: unless-stopped
+
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_DATABASE: CN
+      MARIADB_USER: appuser
+      MARIADB_PASSWORD: apppassword
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+    ports:
+      - "3307:3306"
+
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Adminer database management
+  adminer:
+    image: adminer
+
+    container_name: adminer
+
+    restart: unless-stopped
+
+    ports:
+      - "8081:8080"
+
+    depends_on:
+      - db
+
+# Persistent database storage
+volumes:
+  db_data:
