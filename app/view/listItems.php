@@ -238,7 +238,11 @@ require_once __DIR__."/../Controller/fetchAll.php";
 
 <body>
     <nav>
-        <div class="brand"><span class="bi bi-perso"><?php echo strtoupper(substr($_SESSION['name'], 0,1));?></span> <div><article style ="color: green">Hello! welcome</article><?php echo strtoupper($_SESSION['name']);?></div></div>
+        <div class="brand"><span class="bi bi-perso"><?php echo strtoupper(substr($_SESSION['name'], 0,1));?></span> <div><article style ="color: green">Hello! welcome</article><?php if(strlen(strtoupper($_SESSION['name'])) < 5){
+                                                                                                                                                                                            echo strtoupper($_SESSION['name']);
+                                                                                                                                                                                        } else{
+                                                                                                                                                                                            echo strtoupper(substr($_SESSION['name'], 0,5)."...");
+                                                                                                                                                                                        } ?></div></div>
         <div id="nav">
             <ul class="link">
                 <a href="#"><li>Home</li></a>
