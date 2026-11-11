@@ -55,6 +55,9 @@ require_once __DIR__."/../Controller/fetchAll.php";
             align-self: center;
             
         }
+        table{
+            width: 100%;
+        }
         td{
             height: auto;
             padding: 0.8vh;
@@ -214,6 +217,9 @@ require_once __DIR__."/../Controller/fetchAll.php";
             .brand div article{
                 display: none;
             }
+            table{
+                width: 100%;
+            }
             
          }
 
@@ -262,7 +268,7 @@ require_once __DIR__."/../Controller/fetchAll.php";
                         <td><?php echo $fetch['name']?></td>
                         <td><?php echo $fetch['email']?></td>
                         <td><span class="<?php echo $fetch['status'] == 'active' ? 'active': 'inactive'?>" style=" border-radius: 20px; padding: 0.8vh; text-align: center; color: white; display: flex; align-items: center; justify-content: center;"><?php echo $fetch['status']?></span></td>
-                        <td style="display: flex; flex-wrap: wrap; gap: 1vh; justify-content: center;">
+                        <td style="display: flex; gap: 1vh; justify-content: center;">
                             <a href="?move=Update&id=<?php echo $fetch['id']?>" id="me" class="<?php echo $fetch['status'] == 'active' ? 'delete': 'disactivate'?>" style="text-decoration: none; padding: 1vh 2vh; background-color: ORANGE; border-radius: 5px; color: white; display: flex; gap: 1vh;"><span class="bi bi-pen"></span> <span>Update</span></a>
                             <a href="?move=delete&id=<?php echo $fetch['id']?>" id="me" class="<?php echo $fetch['status'] == 'active' ? 'update': 'disactivate'?>" style="text-decoration: none; padding: 1vh 2vh; background-color: red; border-radius: 5px; color: white; display: flex; gap: 1vh;"><span class="bi bi-trash"></span><span>Delete</span></a>
                             <a href="?move=activate&id=<?php echo $fetch['id']?>" id="me" class="activate" style="text-decoration: none; padding: 1vh 2vh; background-color: BLUE; border-radius: 5px; color: white; display: flex; gap: 1vh;"><span class="bi bi-power"></span><span>Activate</span></a>
